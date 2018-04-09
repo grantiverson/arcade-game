@@ -11,7 +11,8 @@ Character.prototype.render = function() {
 };
 
 // Enemies our player must avoid
-var Enemy = function() {
+var Enemy = function(x, y) {
+    Character.call(this, x, y);
     this.sprite = 'images/enemy-bug.png';  // bug image used for enemies
     this.reset();
 };
@@ -28,11 +29,6 @@ Enemy.prototype.update = function(dt) {
         this.reset();
     }
     this.x += this.speed * dt;  // Multiplies speed by time delta
-};
-
-// Draw the enemy on the screen, required method for game
-Enemy.prototype.render = function() {
-    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
 Enemy.prototype.reset = function() {
@@ -56,22 +52,19 @@ const checkCollisions = function() {    // Checks to see if player has collided 
 // Now write your own player class
 // This class requires an update(), render() and
 // a handleInput() method.
-const Player = function() {
+const Player = function(x, y) {
+    Character.call(this, x, y);
     this.sprite = 'images/char-boy.png';    // Sets player image
     this.wins = 0;
     this.lives = 3;
 }
 
-Player.prototype = Object.create(Player.prototype);
+Player.prototype = Object.create(Character.prototype);
 
 Player.prototype.update = function() {
     if (player.y < 68) {
         player.win();                   // If player makes it to water, win
     }
-}
-
-Player.prototype.render = function() {
-    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 }
 
 Player.prototype.reset = function() {   // Resets player to starting position
@@ -120,7 +113,7 @@ let enemy4 = new Enemy;
 
 const allEnemies = [enemy1, enemy2, enemy3, enemy4];
 
-const player = new Player();
+const player = new Player(200, 400);
 player.reset();
 
 // This listens for key presses and sends the keys to your
