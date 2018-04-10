@@ -1,6 +1,6 @@
 # Front-End Nanodegree Arcade Game
 
-I made this game as a project for my Front-End Web Development Nanodegree from Udacity.
+I made this game as a project for my Front-End Web Development Nanodegree from Udacity. It is a modern variation of Frogger, a classic arcade game, developed using the HTML5 Canvas element and Object Oriented JavaScript.
 
 ## How to play
 
