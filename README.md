@@ -4,7 +4,7 @@ I made this game as a project for my Front-End Web Development Nanodegree from U
 
 ## Run live
 
-Run it live at [arcade-game.iverson.io](http://arcade-game.iverson.io)
+Run it live at [iverson.io/projects/arcade-game](https://iverson.io/projects/arcade-game)
 
 ### How to play
 
